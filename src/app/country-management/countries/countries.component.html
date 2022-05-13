@@ -1,0 +1,27 @@
+<div class="d-flex flex-row justify-content-between custom_pad mt-5">
+    <div class="search">
+        <span class="stock-search"><img src="assets/images/search-normal.svg" alt=""> </span>
+        <input type="search" (input)="search($event)"
+            class="form-control" placeholder="Search for Country">
+    </div>
+    <select [(ngModel)]="regionSelected" class="form-select select_region" (change)="selectChange(regionSelected)">
+        <option disabled selected>Filter By Region</option>
+        <option value="">All</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">Americas</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+    </select>
+</div>
+<div class="d-flex flex-row flex-wrap justify-content-between custom_pad">
+    <mat-card class="example-card" *ngFor="let country of countries | async" routerLink="/countries/{{ country.name.common }}">
+        <img mat-card-image src="{{country.flags.svg}}" alt="">
+        <mat-card-content>
+          <h2 class="weight_class">{{country.name.common}}</h2>
+          <p><span class="weight_class">Population:</span> {{country.population}}</p>
+          <p><span class="weight_class">Region:</span> {{country.region}}</p>
+          <p><span class="weight_class">Capital:</span> {{country.capital}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

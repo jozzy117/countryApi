@@ -1,0 +1,37 @@
+<div class="d-flex flex-row custom_pad mt-5">
+    <button mat-raised-button (click)="goBack()">
+        <mat-icon class="mr-2">keyboard_backspace</mat-icon>
+        Back
+    </button>
+</div>
+<div class="d-flex flex-row custom_pad justify-content-between mt-5">
+    <div class="d-flex flag_part">
+        <img  src="{{country.flags.svg}}" alt="">
+    </div>
+    <div class="d-flex flex-column detail_part">
+        <div class="d-flex flex-row">
+            <h2 class="weight_class">{{country.name.common}}</h2>
+        </div>
+        <div class="d-flex flex-row justify-content-between detail_part2">
+            <mat-card class="example-card">
+                <mat-card-content>
+                  <p><span class="weight_class">Population:</span> {{country.population}}</p>
+                  <p><span class="weight_class">Region:</span> {{country.region}}</p>
+                  <p><span class="weight_class">Capital:</span> {{country.capital}}</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="example-card">
+                <mat-card-content>
+                  <p><span class="weight_class">Time Zone:</span> {{country.timezones}}</p>
+                  <p><span class="weight_class">Continent:</span> {{country.continents[0]}}</p>
+                  <p><span class="weight_class">Language:</span> <span *ngFor="let item of country.languages | keyvalue"> {{item.value}},</span></p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="d-flex flex-row justify-content-center flex-wrap detail_part2 mt-3">
+            <button mat-raised-button *ngFor="let border of country.borders" class="mr-3 mt-3">
+                {{border}}
+            </button>
+        </div>
+    </div>
+</div>

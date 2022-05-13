@@ -1,0 +1,10 @@
+::ng-deep .dark-mode .mat-toolbar {
+    background: #22375A;
+    color: white;
+}
+::ng-deep .mat-toolbar-row {
+    padding: 0 40px !important;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}

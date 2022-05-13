@@ -1,0 +1,29 @@
+::ng-deep .dark-mode .mat-raised-button {
+    color: whitesmoke;
+    background-color: #22375A;
+}
+::ng-deep .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+::ng-deep .dark-mode .mat-card {
+    background: inherit;
+}
+.custom_pad {
+    padding: 0px 25px;
+}
+.flag_part {
+    width: 40%;
+    img {
+        width: 100%;
+    }
+}
+.detail_part {
+    width: 50%;
+}
+.detail_part2 {
+    width: 70%;
+}
+.weight_class {
+    font-weight: 600;
+}
